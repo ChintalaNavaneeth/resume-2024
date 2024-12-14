@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navaneeth Chintala</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="content">
+        <!-- Button to Download as PDF -->
+        <button id="download-btn"><i class='bx bx-download'></i></button>
+
+        <header class="profile-header">
+            <div class="name-emoji">
+                <h1>Hello <span class="emoji">👋</span>, I'm <span class="blue">Navaneeth Chintala</span></h1>
+                <p class="social-links">
+                    <a href="https://www.linkedin.com/in/navaneeth-chintala-097b50192" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square black'></i></a>
+                    <a href="https://github.com/ChintalaNavaneeth" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github purple'></i></a>
+                    <a href="https://leetcode.com/u/navaneethchintala1304/" target="_blank" rel="noopener noreferrer"><i class='bx bx-code-alt red'></i></a>
+                </p>
+            </div>
+            <div class="profile-pic">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-img"> 
+            </div>
+        </header>
+        <div class="desciption">
+            <p>I'm a <strong>Software Engineer 👨🏻‍💻 @ Genpact</strong> based in <strong>Hyderabad, India</strong>.</p>
+            <p>I hold a <strong>Computer Science Degree</strong> from <strong>VIT University</strong>, completed in <strong>2023 🎓</strong>.</p>
+            <p>I'm all about turning challenges into opportunities, like turning lemons into lemonade 🍋🥤!</p>    
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section-header">Experience</div>
+        <section class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-heading">
+                    <div>
+                        <p>DevOps Engineer @ <strong>Genpact</strong></p>
+                    </div>
+                    <div>
+                        <p class="grey">Hyderabad, India [ 2023 - Present ]</span></p>
+                    </div>
+                </div>
+                <div>
+                    <ul class="points">
+                        <li>Set up a Kubernetes cluster in a VM using Minikube for local orchestration and testing.</li>
+                        <li>Worked on DevSecOps tasks, collecting CVE data from scans (Twistlock, JFrog, Sonar, Dependency Check, Nessus) and storing in Postgres.</li>
+                        <li>Used Llama3 LLM to categorize CVE risks and suggest mitigation strategies.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-heading">
+                    <div>
+                        <p>DevOps Intern @ <strong>GE Healthcare</strong></p>
+                    </div>
+                    <div>
+                        <p><span class="grey">Bengaluru, India [ 2022 - 2023 ]</span></p>
+                    </div>
+                </div>
+                <div>
+                    <ul class="points">
+                        <li>Developed Python packages to execute security scans, artifact builds, repo management, publishing artifacts and VM provisioning via CLI and installable using pip.</li>
+                        <li>Delivered containerized and non-containerized services to streamline integration and deployment.</li>
+                        <li>Setup automated workflows for CI/CD, to improve efficiency and scalability.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-heading">
+                    <div>
+                        <p>MTech Integrated Software Engineering @ <strong>VIT - AP University</strong></p>
+                    </div>
+                    <div>
+                        <p class="grey">Amaravathi, India [ 2018 - 2023 ]</p>                   
+                    </div>
+                </div>
+                <div>
+                    <ul class="points">
+                        <li>Aced courses like Java progamming, Computer Networks and secured <strong>8.93 CGPA.</strong></li>
+                        <li>Club Manager @ Block Chain club and Member @ NULL - Chapter club.</li>
+                        <li>Developed a prototype for automated car parking system using Arudino.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <div class="section-header">Skills</div>
+        <ul class="skills-list">
+            <li>🐍 Python</li>
+            <li>☕ DSA with Java</li>
+            <li>☸️ Kubernetes</li>
+            <li>🐳 Docker</li>
+            <li>🚀 Shell Scripting</li>
+            <li>🍳 Jenkins</li>
+            <li>📝 GIT</li>
+            <li>⚙️ DevOps Tools CI/CD</li>
+        </ul>
+
+        <!-- Certifications Section -->
+        <div class="section-header">Certifications</div>
+        <ul class="certificates-list">
+            <li>
+                <a href="https://drive.google.com/file/d/12Z-zGs72JKBlYCUpCS0_e42gSTTxZ5s9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">👷🏼 GE Healthcare Internship</a>
+            </li>
+            <li>
+                <a href="https://www.cloudskillsboost.google/public_profiles/f646f797-4577-4c8a-bd7e-d8edc18887b3" target="_blank" rel="noopener noreferrer">☁️ Google Cloudboost Qwiklabs</a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/file/d/1DVxd55hzRRmG6CLZMd6-ozeOKMkYStdn/view" target="_blank" rel="noopener noreferrer">👷🏼 OSC Hacktoberfest</a>
+            </li>
+        </ul>
+
+        <!-- Hobbies Section -->
+        <div class="section-header">Hobbies</div>
+        <ul class="certificates-list">
+            <li>🏎️ Automotive Geek</li>
+            <li>🏀 Basketball</li>
+            <li>🌏 Geo Politics</li>
+        </ul>
+    </div>
+
+    <!-- Add the script for html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById("download-btn").addEventListener("click", function () {
+            const element = document.getElementById("content");
+            const downloadBtn = document.getElementById("download-btn");
+            downloadBtn.style.display = "none";
+
+            const options = {
+                margin: 0,
+                filename: 'Navaneeth_Chintala_Profile.pdf',
+                image: { type: 'jpeg', quality: 1.0 },
+                html2canvas: { 
+                    scale: 3, // Higher scale for better rendering
+                    useCORS: true, // Enable cross-origin for image loading
+                },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+            };
+
+            html2pdf()
+                .set(options)
+                .from(element)
+                .save()
+                .then(() => {
+                    // Restore the download button after PDF generation
+                    downloadBtn.style.display = "block";
+                });
+        });
+    </script>
+</body>
+</html>
