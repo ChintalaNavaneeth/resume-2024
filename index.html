@@ -45,9 +45,9 @@
                 </div>
                 <div>
                     <ul class="points">
+                        <li>Developed Python packages to execute security scans, artifact builds, repo management, publishing artifacts and VM provisioning via CLI and installable using pip.</li>
+                        <li>Delivered containerized and non-containerized services to streamline integration and deployment.</li>
                         <li>Set up a Kubernetes cluster in a VM using Minikube for local orchestration and testing.</li>
-                        <li>Worked on DevSecOps tasks, collecting CVE data from scans (Twistlock, JFrog, Sonar, Dependency Check, Nessus) and storing in Postgres.</li>
-                        <li>Used Llama3 LLM to categorize CVE risks and suggest mitigation strategies.</li>
                     </ul>
                 </div>
             </div>
@@ -62,8 +62,8 @@
                 </div>
                 <div>
                     <ul class="points">
-                        <li>Developed Python packages to execute security scans, artifact builds, repo management, publishing artifacts and VM provisioning via CLI and installable using pip.</li>
-                        <li>Delivered containerized and non-containerized services to streamline integration and deployment.</li>
+                        <li>Worked on DevSecOps tasks, collecting CVE data from scans (Twistlock, JFrog, Sonar, Dependency Check, Nessus) and storing in Postgres.</li>
+                        <li>Used Llama3 LLM to categorize CVE risks and suggest mitigation strategies.</li>
                         <li>Setup automated workflows for CI/CD, to improve efficiency and scalability.</li>
                     </ul>
                     
@@ -126,32 +126,40 @@
 
     <!-- Add the script for html2pdf.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script>
-        document.getElementById("download-btn").addEventListener("click", function () {
-            const element = document.getElementById("content");
-            const downloadBtn = document.getElementById("download-btn");
-            downloadBtn.style.display = "none";
+<script>
+    document.getElementById("download-btn").addEventListener("click", function () {
+        const element = document.getElementById("content");
+        const downloadBtn = document.getElementById("download-btn");
+        downloadBtn.style.display = "none";
 
-            const options = {
-                margin: 0,
-                filename: 'Navaneeth_Chintala_Profile.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { 
-                    scale: 3, // Higher scale for better rendering
-                    useCORS: true, // Enable cross-origin for image loading
-                },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-            };
+        const options = {
+            margin: 0,
+            filename: 'Navaneeth_Chintala_Resume.pdf',
+            image: { type: 'jpeg', quality: 1.0 },
+            html2canvas: { 
+                scale: 2, // Increased scale for better quality
+                useCORS: true, // Enable cross-origin for image loading
+                onclone: (clonedDoc) => {
+                    // Ensure profile picture retains object-fit: cover
+                    const profileImage = clonedDoc.querySelector(".profile-pic img");
+                    if (profileImage) {
+                        profileImage.style.objectFit = "cover";
+                    }
+                }
+            },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        };
 
-            html2pdf()
-                .set(options)
-                .from(element)
-                .save()
-                .then(() => {
-                    // Restore the download button after PDF generation
-                    downloadBtn.style.display = "block";
-                });
-        });
-    </script>
+        html2pdf()
+            .set(options)
+            .from(element)
+            .save()
+            .then(() => {
+                // Restore the download button after PDF generation
+                downloadBtn.style.display = "block";
+            });
+    });
+</script>
+
 </body>
 </html>
