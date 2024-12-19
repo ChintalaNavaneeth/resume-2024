@@ -6,6 +6,8 @@
     <title>Navaneeth Chintala</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
 </head>
 <body>
     <div class="container" id="content">
@@ -14,12 +16,11 @@
 
         <header class="profile-header">
             <div class="name-emoji">
-                <h1>Hello, I'm Navaneeth Chintala</h1>
+                <h1>Hello <span class="emoji">👋</span>, I'm <span class="blue">Navaneeth Chintala</span></h1>
                 <p class="social-links">
                     <a href="https://www.linkedin.com/in/navaneeth-chintala-097b50192" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square black'></i></a>
                     <a href="https://github.com/ChintalaNavaneeth" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github purple'></i></a>
                     <a href="https://leetcode.com/u/navaneethchintala1304/" target="_blank" rel="noopener noreferrer"><i class='bx bx-code-alt red'></i></a>
-                    <a href="mailto:navaneethchintala1304@gmail.com" target="_blank" rel="noopener noreferrer"> <i class='bx bxl-gmail'></i></a>
                 </p>
             </div>
             <div class="profile-pic">
@@ -27,7 +28,7 @@
             </div>
         </header>
         <div class="desciption">
-            <p>I'm a <strong>Software Engineer 👨🏻‍💻 @ Genpact</strong> based in <strong>Hyderabad, India</strong>.</p>
+            <p>I'm a <strong>Software Engineer 💻 @ Genpact</strong> based in <strong>Hyderabad, India</strong>.</p>
             <p>I hold a <strong>Computer Science Degree</strong> from <strong>VIT University</strong>, completed in <strong>2023 🎓</strong>.</p>
             <p>I'm all about turning challenges into opportunities, like turning lemons into lemonade 🍋🥤!</p>    
         </div>
@@ -41,7 +42,7 @@
                         <p>DevOps Engineer @ <strong>Genpact</strong></p>
                     </div>
                     <div>
-                        <p class="grey" data-joining-date="2023-09" data-end-date="c">Hyderabad, India [ 2023 - Present ]</p>
+                        <p class="grey">Hyderabad, India [ 2023 - Present ]</span></p>
                     </div>
                 </div>
                 <div>
@@ -58,7 +59,7 @@
                         <p>DevOps Intern @ <strong>GE Healthcare</strong></p>
                     </div>
                     <div>
-                        <p class="grey" data-joining-date="2022-10" data-end-date="2023-08">Bengaluru, India [ 2022 - 2023 ]</p>
+                        <p><span class="grey">Bengaluru, India [ 2022 - 2023 ]</span></p>
                     </div>
                 </div>
                 <div>
@@ -67,6 +68,7 @@
                         <li>Used Llama3 LLM to categorize CVE risks and suggest mitigation strategies.</li>
                         <li>Setup automated workflows for CI/CD, to improve efficiency and scalability.</li>
                     </ul>
+                    
                 </div>
             </div>
             <div class="timeline-item">
@@ -80,9 +82,9 @@
                 </div>
                 <div>
                     <ul class="points">
-                        <li>Aced courses like Java programming, Computer Networks and secured <strong>8.93 CGPA.</strong></li>
+                        <li>Aced courses like Java progamming, Computer Networks and secured <strong>8.93 CGPA.</strong></li>
                         <li>Club Manager @ Block Chain club and Member @ NULL - Chapter club.</li>
-                        <li>Developed a prototype for automated car parking system using Arduino.</li>
+                        <li>Developed a prototype for automated car parking system using Arudino.</li>
                     </ul>
                 </div>
             </div>
@@ -111,7 +113,7 @@
                 <a href="https://www.cloudskillsboost.google/public_profiles/f646f797-4577-4c8a-bd7e-d8edc18887b3" target="_blank" rel="noopener noreferrer">☁️ Google Cloudboost Qwiklabs</a>
             </li>
             <li>
-                <a href="https://drive.google.com/file/d/1DVxd55hzRRmG6CLZMd6-ozeOKMkYStdn/view" target="_blank" rel="noopener noreferrer">📢 OSC Hacktoberfest</a>
+                <a href="https://drive.google.com/file/d/1DVxd55hzRRmG6CLZMd6-ozeOKMkYStdn/view" target="_blank" rel="noopener noreferrer">👷🏼 OSC Hacktoberfest</a>
             </li>
         </ul>
 
@@ -124,80 +126,28 @@
         </ul>
     </div>
 
-    <!-- Add the script for html2pdf.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
-        document.getElementById("download-btn").addEventListener("click", function () {
-            const element = document.getElementById("content");
+        // JavaScript for the PDF download functionality
+        document.getElementById('download-btn').addEventListener('click', function() {
             const downloadBtn = document.getElementById("download-btn");
-            downloadBtn.style.display = "none";
-
-            const options = {
-                margin: 0,
-                filename: 'Navaneeth_Chintala_Resume.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { 
-                    scale: 2, 
-                    useCORS: true,
-                    backgroundColor: '#000000',
-                    onclone: (clonedDoc) => {
-                        const profileImage = clonedDoc.querySelector(".profile-pic img");
-                        if (profileImage) {
-                            profileImage.style.objectFit = "cover";
-                        }
-                    }
-                },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+            downloadBtn.style.display = "none";  // Hide the button
+    
+            const element = document.getElementById('content');
+            const opt = {
+                margin:       0.5,
+                filename:     'Navaneeth_Chintala_Resume.pdf',
+                image:        { type: 'jpeg', quality: 1 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
-
-            html2pdf()
-                .set(options)
-                .from(element)
-                .save()
-                .then(() => {
-                    downloadBtn.style.display = "block";
-                });
-        });
-
-        // Calculate and update experience
-        document.addEventListener("DOMContentLoaded", function () {
-            const experienceElements = document.querySelectorAll(".grey[data-joining-date]");
-            experienceElements.forEach((element) => {
-                const joiningDate = element.getAttribute("data-joining-date");
-                const endDate = element.getAttribute("data-end-date") || 'c'; // Default to current date
-                if (joiningDate) {
-                    const experience = calculateExperience(joiningDate, endDate);
-                    element.textContent += ` ${experience}`;
-                }
+    
+            // Generate the PDF and save it
+            html2pdf().set(opt).from(element).save().then(() => {
+                downloadBtn.style.display = "block";  // Show the button again
             });
         });
-
-        function calculateExperience(start, end) {
-            const [startYear, startMonth] = start.split('-').map(Number);
-            const endDate = end === 'c' ? new Date() : new Date(`${end}-01`);
-            const endYear = endDate.getFullYear();
-            const endMonth = endDate.getMonth() + 1;
-
-            let totalYears = endYear - startYear;
-            let totalMonths = endMonth - startMonth;
-
-            if (totalMonths < 0) {
-                totalYears -= 1;
-                totalMonths += 12;
-            }
-
-            if (totalYears === 0 && totalMonths === 0)
-                return " 0M";
-            
-            if (totalYears === 0)
-                return ` ${totalMonths}M`;
-            
-            if (totalMonths === 0)
-                return ` ${totalYears}Y`;
-
-            return ` ${totalYears}Y/${totalMonths}M`;
-        }
-
     </script>
+    
+
 </body>
 </html>
