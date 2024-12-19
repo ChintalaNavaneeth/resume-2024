@@ -45,7 +45,7 @@ body {
 .name-emoji h1 {
     font-size: 1.8rem;
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .profile-pic {
@@ -55,16 +55,16 @@ body {
 }
 
 .profile-pic img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
     max-height: 100%;
-    width: 100px; /* Increased by 10% from 110px */
-    height: 100px; /* Increased by 10% from 110px */
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%;
     object-fit: cover;
     margin-top: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.2); /* Scales the image by 10% */
+    transform: scale(1.2);
 }
 
 
