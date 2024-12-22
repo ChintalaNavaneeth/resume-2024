@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-
 </head>
 <body>
     <div class="container" id="content">
@@ -16,19 +15,20 @@
 
         <header class="profile-header">
             <div class="name-emoji">
-                <h1>Hello, I'm Navaneeth Chintala</span></h1>
+                <h1>Hello, I'm Navaneeth Chintala</h1>
                 <p class="social-links">
                     <a href="https://www.linkedin.com/in/navaneeth-chintala-097b50192" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square black'></i></a>
                     <a href="https://github.com/ChintalaNavaneeth" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github purple'></i></a>
-                    <a href="https://leetcode.com/u/navaneethchintala1304/" target="_blank" ><img src="icons/leetcode.svg" class="icon"></a>
-                    <a href="mailto:navaneethchintala1304@gmail.com" target="_blank" ><img src="icons/gmail.svg" class="icon"></a>
-                    <a href="https://chintalanavaneeth.github.io/resume-2024/" target="_blank" ><img src="icons/resume.svg" class="icon"></a>                    
+                    <a href="https://leetcode.com/u/navaneethchintala1304/" target="_blank" rel="noopener noreferrer"><img src="icons/leetcode.svg" class="icon"></a>
+                    <a href="mailto:navaneethchintala1304@gmail.com" target="_blank" rel="noopener noreferrer"> <img src="icons/gmail.svg" class="icon"></a>
+                    <a href="https://chintalanavaneeth.github.io/resume-2024/" target="_blank" rel="noopener noreferrer"> <i class='bx bx-file'></i></a>                    
                 </p>
             </div>
             <div class="profile-pic">
                 <img src="profile.jpg" alt="Profile Picture" class="profile-img"> 
             </div>
         </header>
+
         <div class="desciption">
             <p>I'm a <strong>Software Engineer 💻 @ Genpact</strong> based in <strong>Hyderabad, India</strong>.</p>
             <p>I hold a <strong>Computer Science Degree</strong> from <strong>VIT University</strong>, completed in <strong>2023 🎓</strong>.</p>
@@ -44,7 +44,7 @@
                         <p>DevOps Engineer @ <strong>Genpact</strong></p>
                     </div>
                     <div>
-                        <p class="grey">Hyderabad, India [ 2023 - Present ]</span></p>
+                        <p class="grey">Hyderabad, India [ 2023 - Present ]</p>
                     </div>
                 </div>
                 <div>
@@ -61,7 +61,7 @@
                         <p>DevOps Intern @ <strong>GE Healthcare</strong></p>
                     </div>
                     <div>
-                        <p><span class="grey">Bengaluru, India [ 2022 - 2023 ]</span></p>
+                        <p class="grey">Bengaluru, India [ 2022 - 2023 ]</p>
                     </div>
                 </div>
                 <div>
@@ -70,7 +70,6 @@
                         <li>Used Llama3 LLM to categorize CVE risks and suggest mitigation strategies.</li>
                         <li>Setup automated workflows for CI/CD, to improve efficiency and scalability.</li>
                     </ul>
-                    
                 </div>
             </div>
             <div class="timeline-item">
@@ -79,14 +78,14 @@
                         <p>MTech Integrated Software Engineering @ <strong>VIT - AP University</strong></p>
                     </div>
                     <div>
-                        <p class="grey">Amaravathi, India [ 2018 - 2023 ]</p>                   
+                        <p class="grey">Amaravathi, India [ 2018 - 2023 ]</p>
                     </div>
                 </div>
                 <div>
                     <ul class="points">
-                        <li>Aced courses like Java progamming, Computer Networks and secured <strong>8.93 CGPA.</strong></li>
+                        <li>Aced courses like Java programming, Computer Networks and secured <strong>8.93 CGPA.</strong></li>
                         <li>Club Manager @ Block Chain club and Member @ NULL - Chapter club.</li>
-                        <li>Developed a prototype for automated car parking system using Arudino.</li>
+                        <li>Developed a prototype for automated car parking system using Arduino.</li>
                     </ul>
                 </div>
             </div>
@@ -133,23 +132,25 @@
         document.getElementById('download-btn').addEventListener('click', function() {
             const downloadBtn = document.getElementById("download-btn");
             downloadBtn.style.display = "none";  // Hide the button
-    
+
             const element = document.getElementById('content');
             const opt = {
-                margin:       0.5,
-                filename:     'Navaneeth_Chintala_Resume.pdf',
-                image:        { type: 'jpeg', quality: 1 },
-                html2canvas:  { scale: 2 },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                margin: 0.5,
+                filename: 'Navaneeth_Chintala_Resume.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,  // Ensure CORS is enabled for external resources
+                    allowTaint: true,  // Allow tainting for external resources
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
-    
+
             // Generate the PDF and save it
             html2pdf().set(opt).from(element).save().then(() => {
                 downloadBtn.style.display = "block";  // Show the button again
             });
         });
     </script>
-    
-
 </body>
 </html>
